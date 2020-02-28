@@ -1,0 +1,28 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<!-- aici facem submit catre metoda doPost din servletul CustomersWithThymeleaf -->
+<form th:action="@{/customersWithThymeleaf}" method="post">
+    <fieldset style="color:blue">
+        <legend style="color:blue"><h2>Insert Customer</h2></legend>
+        ID:<br>
+        <input type="text" name="id"><br>
+        <div style="color:red;"> <!-- folosim div ca sa adaugam un stil diferit anumitor elemente din pagina -->
+            Name:<br>
+            <input type="text" name="name"><br>
+            Phone:<br>
+            <input type="text" name="phone" th:text="${name}"><br>
+        </div>
+        Adress:<br>
+        <input type="text" name="adress"><br><br>
+        <input type="submit" value="Insert Customer" style="color:blue;">
+    </fieldset>
+</form>
+
+</body>
+</html>

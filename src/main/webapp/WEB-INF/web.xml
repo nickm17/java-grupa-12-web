@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://java.sun.com/xml/ns/javaee"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+         id="WebApp_ID" version="3.0">
+
+    <display-name>ServletExemple SIIT</display-name>
+
+    <servlet>
+        <servlet-name>CustomerServletJSP</servlet-name>
+        <servlet-class>siit.CustomerServletJSP</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CustomerServletJSP</servlet-name>
+        <url-pattern>/customersWithJsp</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>InsertServlet</servlet-name>
+        <servlet-class>siit.InsertServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>InsertServlet</servlet-name>
+        <url-pattern>/showInsertPage</url-pattern>
+    </servlet-mapping>
+
+    <!-- annotarea @WebServlet face acelasi lucru ca si maparea din web.xml si e necesara doar intr-un singur loc -->
+<!--    <servlet>-->
+<!--        <servlet-name>CustomerServletThymeleaf</servlet-name>-->
+<!--        <servlet-class>siit.CustomerServletThymeleaf</servlet-class>-->
+<!--    </servlet>-->
+<!--    <servlet-mapping>-->
+<!--        <servlet-name>CustomerServletThymeleaf</servlet-name>-->
+<!--        <url-pattern>/customersWithThymeleaf</url-pattern>-->
+<!--    </servlet-mapping>-->
+
+    <welcome-file-list>
+        <welcome-file>index.html</welcome-file>
+    </welcome-file-list>
+</web-app>

@@ -1,0 +1,32 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+    <title>Customer details</title>
+</head>
+<body>
+
+<!-- facem  un request GET la servletul CustomersWithThymeleaf pentru a afisa pagina de insert -->
+<a th:href="@{'/showInsertPage'}">Insert new Customer</a>
+<br>
+
+<!--aici afisam mesajul de success daca exista-->
+<div style="color:red" th:if="${customerCreated}" th:text="${customerCreated}"></div>
+<br>
+<h1>Customer records</h1>
+<table border="1" style="width:100%">
+    <tr>
+        <th>id</th>
+        <th>Name</th>
+        <th>Phone</th>
+        <th>Adress</th>
+    </tr>
+    <tr th:each="customer:${customers}">
+        <td th:text="${customer.id}" align="justify"></td>
+        <td th:text="${customer.name}" align="justify"></td>
+        <td th:text="${customer.phone}" align="justify"></th:out></td>
+        <td th:text="${customer.adress}" align="justify"></th:out></td>
+    </tr>
+</table>
+</body>
+</html>
